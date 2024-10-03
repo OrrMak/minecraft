@@ -17,7 +17,7 @@ for(let i=1; i<16; i++){
             rowTile.addEventListener('click', function() {
                console.log(`Tile clicked: ${tileID}`); // Log the clicked tile ID
                
-               if(rowTile.classList.contains('rock')){
+               if(rowTile.classList.contains('rock') && selectedTool==='Axe'){
                     rowTile.classList.remove('rock');
                     console.log(`remove the rock from:, ${tileID}`);
                }
@@ -48,17 +48,29 @@ rock();
 // a. Axe - for cutting trees
 // b.Pickaxe - for mining rocks
 // c. Shovel - for digging dirt
-// counters: leaves, treetrunk, grass, soil, rock.
+// counters: leaves, treetrunk, grass*, soil, rock.
 
 const menu=document.getElementsByClassName('left')[0];
 console.log(menu);
 const toolsArray=['Axe','Pickaxe','Shovel'];
+let selectedTool;
 //create tools:
-
 for (i=0; i<toolsArray.length; i++){
     const tool=document.createElement('div');
     tool.setAttribute('id',toolsArray[i]);
     tool.textContent=toolsArray[i];
+
+     //click events
+    tool.addEventListener('click', function() {
+        const currentClicked=document.querySelector('.left .clicked');
+        if (currentClicked){
+            currentClicked.classList.remove('clicked')
+        }
+
+        tool.classList.add('clicked');
+            console.log(`tool clicked: ${tool.id}`); // Log the clicked tile ID
+            selectedTool=tool.id;
+    });
 
     console.log(tool);
     menu.appendChild(tool);
