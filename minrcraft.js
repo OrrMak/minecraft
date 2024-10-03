@@ -1,6 +1,5 @@
 
 const gameBoard=document.getElementsByClassName('right')[0];
-// console.log(skyTiles);
 const boardArray=[];
 
 //make the gameBoard as 2d array, create background tiles.
@@ -45,5 +44,25 @@ rock();
 
 // if()
 
-//menu buttons
+// //menu buttons
+// a. Axe - for cutting trees
+// b.Pickaxe - for mining rocks
+// c. Shovel - for digging dirt
+// counters: leaves, treetrunk, grass, soil, rock.
+
+const menu=document.getElementsByClassName('left')[0];
+console.log(menu);
+const toolsArray=['Axe','Pickaxe','Shovel'];
+//create tools:
+
+for (i=0; i<toolsArray.length; i++){
+    const tool=document.createElement('div');
+    tool.setAttribute('id',toolsArray[i]);
+    tool.textContent=toolsArray[i];
+
+    console.log(tool);
+    menu.appendChild(tool);
+}
+
+//create rock counter
 
