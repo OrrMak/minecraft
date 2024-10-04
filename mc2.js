@@ -30,6 +30,15 @@ for (i=0; i<toolsArray.length; i++){
 const Axe=document.getElementById('Axe');
 Axe.innerText ='axe';
 
+const Pickaxe=document.getElementById('Pickaxe');
+Pickaxe.innerText ='Pickaxe';
+
+const Shovel=document.getElementById('Shovel');
+Shovel.innerText ='Shovel';
+
+const PurningTool=document.getElementById('PurningTool');
+PurningTool.innerText ='PurningTool';
+
 const rockCounter=document.getElementById('rockPlacer');
 rockCounter.innerText ='0';
 let currentRockCount=parseInt(rockPlacer.innerText);
@@ -37,6 +46,19 @@ let currentRockCount=parseInt(rockPlacer.innerText);
 const soilCounter=document.getElementById('soilPlacer');
 soilCounter.innerText ='0';
 let currentSoilCount=parseInt(soilPlacer.innerText);
+
+const grassCounter=document.getElementById('grassPlacer');
+grassCounter.innerText ='0';
+let currentGrassCount=parseInt(grassPlacer.innerText);
+
+const trunkCounter=document.getElementById('trunkPlacer');
+trunkCounter.innerText ='0';
+let currentTrunkCount=parseInt(grassPlacer.innerText);
+
+const leavesCounter=document.getElementById('leavesPlacer');
+leavesCounter.innerText ='0';
+let currentLeavesCount=parseInt(leavesPlacer.innerText);
+
 
 //Create background tiles and store them in a 2D array
 for(let i=1; i<16; i++){
@@ -85,6 +107,24 @@ for(let i=1; i<16; i++){
                     if (rowTile.className==='boardTile'){
                         rowTile.classList.add('soil');
                         console.log(`added soil to:, ${tileID}`);
+
+                        currentSoilCount-=1;
+                        soilCounter.innerText=currentSoilCount;
+                    }}
+                    //grass   
+                //removes soil
+                if(rowTile.classList.contains('grass') && selectedTool==='Shovel'){
+                    rowTile.classList.remove('grass');
+                    console.log(`remove the grass from:, ${tileID}`);
+                //counter soil 
+                    currentSoilCount+=1;
+                    soilCounter.innerText=currentSoilCount;
+                 }
+                //add soil to board
+                if(selectedTool==='grassPlacer' && currentSoilCount>=1 ){
+                    if (rowTile.className==='boardTile'){
+                        rowTile.classList.add('grass');
+                        console.log(`added grass to:, ${tileID}`);
 
                         currentSoilCount-=1;
                         soilCounter.innerText=currentSoilCount;

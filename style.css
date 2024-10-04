@@ -65,7 +65,7 @@ body{
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    height: 100%;
+    height: auto;
     width:20%;
     background-color: rebeccapurple;
 
@@ -93,3 +93,12 @@ body{
 #soilPlacer{
     background-color: rgb(82, 61, 61);
 } 
+#grassPlacer{
+    background-color: rgb(123, 249, 77);
+}
+#trunkPlacer{
+    background-color: rgb(145, 76, 24);
+}
+#leavesPlacer{
+    background-color: rgb(123, 249, 77);
+}
