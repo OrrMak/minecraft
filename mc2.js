@@ -26,13 +26,17 @@ for (i=0; i<toolsArray.length; i++){
     menu.appendChild(tool);
 }
 
-//create rock counter
+//create counters
 const Axe=document.getElementById('Axe');
 Axe.innerText ='axe';
 
 const rockCounter=document.getElementById('rockPlacer');
 rockCounter.innerText ='0';
 let currentRockCount=parseInt(rockPlacer.innerText);
+
+const soilCounter=document.getElementById('soilPlacer');
+soilCounter.innerText ='0';
+let currentSoilCount=parseInt(soilPlacer.innerText);
 
 //Create background tiles and store them in a 2D array
 for(let i=1; i<16; i++){
@@ -47,9 +51,8 @@ for(let i=1; i<16; i++){
 
             //Click event for each tile
             rowTile.addEventListener('click', function() {
-            
             //ROCK   
-                //removes rock
+            //removes rock
             if(rowTile.classList.contains('rock') && selectedTool==='Axe'){
                     rowTile.classList.remove('rock');
                     console.log(`remove the rock from:, ${tileID}`);
@@ -61,16 +64,32 @@ for(let i=1; i<16; i++){
             
                 //add rock to board
             if(selectedTool==='rockPlacer' && currentRockCount>=1 ){
-                if (!rowTile.classList.contains('rock')){
+                if (rowTile.className==='boardTile'){
                     rowTile.classList.add('rock');
                     console.log(`added rock to:, ${tileID}`);
 
                     currentRockCount-=1;
                     rockCounter.innerText=currentRockCount;
             } }
-            });
+            //soil   
+                //removes soil
+                if(rowTile.classList.contains('soil') && selectedTool==='Shovel'){
+                    rowTile.classList.remove('soil');
+                    console.log(`remove the soil from:, ${tileID}`);
+                //counter soil 
+                    currentSoilCount+=1;
+                    soilCounter.innerText=currentSoilCount;
+                 }
+                //add soil to board
+                if(selectedTool==='soilPlacer' && currentSoilCount>=1 ){
+                    if (rowTile.className==='boardTile'){
+                        rowTile.classList.add('soil');
+                        console.log(`added soil to:, ${tileID}`);
 
-
+                        currentSoilCount-=1;
+                        soilCounter.innerText=currentSoilCount;
+                    }}
+        });
             row.appendChild(rowTile);
             boardArray.push(rowTile);
         }
