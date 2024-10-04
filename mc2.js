@@ -6,7 +6,7 @@ let selectedTool=null;
 //menu 
 const menu=document.getElementsByClassName('left')[0];
 console.log(menu);
-const toolsArray=['Axe','Pickaxe','Shovel','rockPlacer','grassPlacer','soilPlacer'];
+const toolsArray=['Axe','Pickaxe','Shovel','PurningTool','rockPlacer','grassPlacer','soilPlacer','trunkPlacer','leavesPlacer'];
 
 //create tools:
 for (i=0; i<toolsArray.length; i++){
