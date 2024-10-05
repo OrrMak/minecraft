@@ -53,7 +53,7 @@ let currentGrassCount=parseInt(grassPlacer.innerText);
 
 const trunkCounter=document.getElementById('trunkPlacer');
 trunkCounter.innerText ='0';
-let currentTrunkCount=parseInt(grassPlacer.innerText);
+let currentTrunkCount=parseInt(trunkPlacer.innerText);
 
 const leavesCounter=document.getElementById('leavesPlacer');
 leavesCounter.innerText ='0';
@@ -75,10 +75,10 @@ for(let i=1; i<16; i++){
             rowTile.addEventListener('click', function() {
             //ROCK   
             //removes rock
-            if(rowTile.classList.contains('rock') && selectedTool==='Axe'){
+            if(rowTile.classList.contains('rock') && selectedTool==='Pickaxe'){
                     rowTile.classList.remove('rock');
                     console.log(`remove the rock from:, ${tileID}`);
-                //counter rock 
+                //counter 
                     currentRockCount+=1;
                     rockCounter.innerText=currentRockCount;
                     // rockCounter.setAttribute('id','rockPlacer');
@@ -93,16 +93,15 @@ for(let i=1; i<16; i++){
                     currentRockCount-=1;
                     rockCounter.innerText=currentRockCount;
             } }
-            //soil   
-                //removes soil
+            //soil       
                 if(rowTile.classList.contains('soil') && selectedTool==='Shovel'){
                     rowTile.classList.remove('soil');
                     console.log(`remove the soil from:, ${tileID}`);
-                //counter soil 
+                 
                     currentSoilCount+=1;
                     soilCounter.innerText=currentSoilCount;
                  }
-                //add soil to board
+                
                 if(selectedTool==='soilPlacer' && currentSoilCount>=1 ){
                     if (rowTile.className==='boardTile'){
                         rowTile.classList.add('soil');
@@ -111,23 +110,53 @@ for(let i=1; i<16; i++){
                         currentSoilCount-=1;
                         soilCounter.innerText=currentSoilCount;
                     }}
-                    //grass   
-                //removes soil
+            //grass     
                 if(rowTile.classList.contains('grass') && selectedTool==='Shovel'){
                     rowTile.classList.remove('grass');
                     console.log(`remove the grass from:, ${tileID}`);
-                //counter soil 
-                    currentSoilCount+=1;
-                    soilCounter.innerText=currentSoilCount;
+                
+                    currentGrassCount+=1;
+                    grassCounter.innerText=currentGrassCount;
                  }
-                //add soil to board
-                if(selectedTool==='grassPlacer' && currentSoilCount>=1 ){
+                if(selectedTool==='grassPlacer' && currentGrassCount>=1 ){
                     if (rowTile.className==='boardTile'){
                         rowTile.classList.add('grass');
                         console.log(`added grass to:, ${tileID}`);
 
-                        currentSoilCount-=1;
-                        soilCounter.innerText=currentSoilCount;
+                        currentGrassCount-=1;
+                        grassCounter.innerText=currentGrassCount;
+                    }}
+                //trunk     
+                if(rowTile.classList.contains('treeTrunk') && selectedTool==='Axe'){
+                    rowTile.classList.remove('treeTrunk');
+                    console.log(`remove the treeTrunk from:, ${tileID}`);
+                
+                    currentTrunkCount+=1;
+                    trunkCounter.innerText=currentTrunkCount;
+                 }
+                if(selectedTool==='trunkPlacer' && currentTrunkCount>=1 ){
+                    if (rowTile.className==='boardTile'){
+                        rowTile.classList.add('treeTrunk');
+                        console.log(`added treeTrunk to:, ${tileID}`);
+
+                        currentTrunkCount-=1;
+                        trunkCounter.innerText=currentTrunkCount;
+                    }}
+                //leaves     
+                if(rowTile.classList.contains('leaves') && selectedTool==='PurningTool'){
+                    rowTile.classList.remove('leaves');
+                    console.log(`remove the leaves from:, ${tileID}`);
+                
+                    currentLeavesCount+=1;
+                    leavesCounter.innerText=currentLeavesCount;
+                 }
+                if(selectedTool==='leavesPlacer' && currentLeavesCount>=1 ){
+                    if (rowTile.className==='boardTile'){
+                        rowTile.classList.add('leaves');
+                        console.log(`added leaves to:, ${tileID}`);
+
+                        currentLeavesCount-=1;
+                        leavesCounter.innerText=currentLeavesCount;
                     }}
         });
             row.appendChild(rowTile);

@@ -3,7 +3,7 @@ html, body{
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: rgb(108, 113, 113);
     /* display: flex; */
 }
 body{
@@ -21,7 +21,7 @@ body{
 .row{
     display: flex;
     width: 100%;
-    height: 20%;
+    /* height: 20%; */
 }
 .boardTile{
     box-sizing: border-box; /*the combination of flex and aspect ratio affects the border, therefor this line ensures the correct borders are rendered*/
@@ -65,10 +65,9 @@ body{
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    height: auto;
+    /* height: auto; */
     width:20%;
     background-color: rebeccapurple;
-
 }
 
 .left div{
@@ -76,7 +75,7 @@ body{
     padding: 0;
     width: 100%;
     height: 100%;
-    height: 15%;
+    /* height: 15%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,7 +93,7 @@ body{
     background-color: rgb(82, 61, 61);
 } 
 #grassPlacer{
-    background-color: rgb(123, 249, 77);
+    background-color: rgb(41, 165, 68);
 }
 #trunkPlacer{
     background-color: rgb(145, 76, 24);
