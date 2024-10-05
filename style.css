@@ -31,7 +31,10 @@ body{
     height: 100%;
     /* display: flex; */
     aspect-ratio: 1; 
-    background-color: rgb(159, 237, 237);
+    /* background-color: rgb(159, 237, 237); */
+    background-image: url('./sky.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 .boardTile:hover{
     opacity: 0.7; /* Slightly transparent */
@@ -49,20 +52,31 @@ body{
     box-sizing: border-box;
 }
 .rock{
-    background-color: grey;
+    background-image: url('./rocks.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 .soil{
-    background-color: rgb(82, 61, 61);
+    background-image: url('./ground.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 .grass{
-    background-color: rgb(41, 165, 68);
+    background-image: url('./grass.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 .treeTrunk{
-    background-color: rgb(145, 76, 24);
+    background-image: url('/treetrunk.avif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 .leaves{
-    background-color: rgb(123, 249, 77);
+    background-image: url('./leaves.jfif'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
+
 /* menu */
 .left{
     margin: 0;
