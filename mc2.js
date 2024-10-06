@@ -30,6 +30,7 @@ for (i=0; i<toolsArray.length; i++){
 const Axe=document.getElementById('Axe');
 Axe.innerText ='Axe';
 
+
 const Pickaxe=document.getElementById('Pickaxe');
 Pickaxe.innerText ='Pickaxe';
 

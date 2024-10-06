@@ -104,11 +104,11 @@ body{
 .left .clicked{
     background-color: aliceblue;
 }
-/* #Axe{ */
-    /* background-image: url('https://cdn-icons-png.flaticon.com/512/2907/2907610.png'); */
-    /* background-size: cover; 
-    background-repeat: no-repeat; */
-/* } */
+#Axe{
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor:alias;
+}
 
 #rockPlacer{
     background-image: url('./rocks.jfif');  
