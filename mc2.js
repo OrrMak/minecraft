@@ -28,7 +28,7 @@ for (i=0; i<toolsArray.length; i++){
 
 //create counters
 const Axe=document.getElementById('Axe');
-Axe.innerText ='axe';
+Axe.innerText ='Axe';
 
 const Pickaxe=document.getElementById('Pickaxe');
 Pickaxe.innerText ='Pickaxe';
@@ -46,6 +46,9 @@ let currentRockCount=parseInt(rockPlacer.innerText);
 const soilCounter=document.getElementById('soilPlacer');
 soilCounter.innerText ='0';
 let currentSoilCount=parseInt(soilPlacer.innerText);
+// const soilPlacerPic=document.createElement('div')
+// soilPlacerPic.setAttribute('id','soilPlacerPic')
+// soilCounter.appendChild(soilPlacerPic);
 
 const grassCounter=document.getElementById('grassPlacer');
 grassCounter.innerText ='0';

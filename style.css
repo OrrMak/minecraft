@@ -3,36 +3,35 @@ html, body{
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(108, 113, 113);
+    /* background-color: rgb(108, 113, 113); */
     /* display: flex; */
+    font-family: 'minecraft', sans-serif;
 }
 body{
     display: flex;
+    position: relative;
 }
 .right{
     margin: 0;
     padding: 0;
-    width:80%;
-    height: 100%;
-    background-color: rgb(74, 93, 156);
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 .row{
     display: flex;
     width: 100%;
-    /* height: 20%; */
 }
 .boardTile{
     box-sizing: border-box; /*the combination of flex and aspect ratio affects the border, therefor this line ensures the correct borders are rendered*/
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     /* display: flex; */
     aspect-ratio: 1; 
-    /* background-color: rgb(159, 237, 237); */
-    background-image: url('./sky.jfif'); 
+    background-image: url('./sky.png'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -79,46 +78,77 @@ body{
 
 /* menu */
 .left{
-    margin: 0;
-    /* margin-top: 1%; */
-    padding: 0;
+    position: fixed; /* Keep it floating on the screen */
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    /* height: auto; */
-    width:20%;
-    background-color: rebeccapurple;
+    width: 10%;
+    height: 100vh; 
+    z-index: 10; /* Ensures it's always on top */
 }
 
 .left div{
-    margin: 0;
+    margin: 5%;
     padding: 0;
     width: 100%;
-    height: 100%;
-    /* height: 15%; */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .left div:hover{
-    background-color: aliceblue;
+    opacity: 0.9; 
 }
 .left .clicked{
     background-color: aliceblue;
 }
+/* #Axe{ */
+    /* background-image: url('https://cdn-icons-png.flaticon.com/512/2907/2907610.png'); */
+    /* background-size: cover; 
+    background-repeat: no-repeat; */
+/* } */
+
 #rockPlacer{
-    background-color: grey;
+    background-image: url('./rocks.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
 }
 #soilPlacer{
-    background-color: rgb(82, 61, 61);
-} 
+    background-image: url('./ground.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
+    /* border-radius: 10px; */
+}
+
 #grassPlacer{
-    background-color: rgb(41, 165, 68);
+    background-image: url('./grass.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
 }
 #trunkPlacer{
-    background-color: rgb(145, 76, 24);
+    background-image: url('./treetrunk.avif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
 }
 #leavesPlacer{
-    background-color: rgb(123, 249, 77);
+    background-image: url('./leaves.jfif');  
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1; 
 }
